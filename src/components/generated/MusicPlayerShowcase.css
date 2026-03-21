@@ -1,0 +1,489 @@
+/* Fancy Smancy Project Title */
+.fancy-smancy-project-title {
+  width: 100%;
+  max-width: 480px;
+  height: auto;
+  color: rgba(0, 0, 0, 1);
+  box-sizing: content-box;
+  font-size: 21px;
+  font-family: 'Whitney Book', sans-serif;
+  font-weight: 500;
+  line-height: 23.9px;
+  letter-spacing: 0px;
+  text-align: left;
+  margin: 0;
+}
+
+/* Project Description */
+.project-description {
+  width: 100%;
+  max-width: 480px;
+  height: auto;
+  color: rgba(0, 0, 0, 0.5);
+  box-sizing: content-box;
+  font-size: 21px;
+  font-family: 'Whitney Book', sans-serif;
+  font-weight: 500;
+  line-height: 23.9px;
+  letter-spacing: 0px;
+  text-align: left;
+  margin: 0;
+}
+
+/* Music Player Button */
+.music-player-button-wrapper {
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 28px;
+  padding-bottom: 12px;
+  box-sizing: border-box;
+  overflow: visible;
+}
+
+.music-player-button-wrapper a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.music-player-button-inner {
+  height: auto;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  padding: 6px;
+  background-color: rgba(255, 255, 255, 0.24);
+  box-sizing: border-box;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  outline: none;
+  border: none;
+  overflow: visible;
+}
+
+.music-player-button-inner:hover {
+  background-color: rgba(255, 255, 255, 0.35);
+}
+
+.music-player-button-inner[role='button'] {
+  cursor: pointer;
+}
+
+.music-player-audio-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 6px 12px;
+  gap: 8px;
+  box-sizing: border-box;
+  overflow: visible;
+}
+
+.music-player-audio-icon {
+  width: 7.07px;
+  height: 9px;
+}
+
+.music-player-audio-label {
+  height: 9px;
+  color: rgba(0, 0, 0, 0.5);
+  box-sizing: content-box;
+  font-size: 8px;
+  font-family: 'Whitney Book', sans-serif;
+  font-weight: 500;
+  line-height: 9.1px;
+}
+
+.music-player-link-container {
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 6px 12px;
+  gap: 10px;
+  background-color: rgba(255, 255, 255, 0.5);
+  box-sizing: border-box;
+  border-radius: 6px;
+  position: relative;
+  overflow: visible;
+}
+
+.music-player-link-text {
+  position: relative;
+  display: inline-block;
+  overflow: visible;
+}
+
+.music-player-link-base {
+  color: rgba(0, 0, 0, 0.2);
+  font-size: 16px;
+  font-family: 'Whitney Book', sans-serif;
+  font-weight: 500;
+}
+
+.music-player-link-hover {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0%;
+  overflow: hidden;
+  transition: width 0.25s ease;
+  white-space: nowrap;
+  color: rgba(0, 0, 0, 1);
+  font-size: 16px;
+  font-family: 'Whitney Book', sans-serif;
+  font-weight: 500;
+}
+
+.music-player-link-text:hover .music-player-link-hover {
+  width: 100%;
+}
+
+.music-player-pointer-container {
+  width: 114px;
+  height: 90.04px;
+  position: absolute;
+  left: 0px;
+  z-index: 1;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.music-player-pointer-icon {
+  width: 13px;
+  height: 90.04px;
+  opacity: 0;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+}
+
+.music-player-button-inner:hover .music-player-pointer-icon {
+  opacity: 1;
+}
+
+.music-player-mask-icon {
+  width: 102px;
+  height: 18px;
+  position: absolute;
+  left: 12px;
+  top: 54.66px;
+}
+
+.music-pointer-hover-container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0%;
+  overflow: visible;
+  transition: width 0.25s ease;
+  pointer-events: none;
+}
+
+.music-player-link-text:hover .music-pointer-hover-container {
+  width: 100%;
+}
+
+.music-pointer-icon {
+  position: absolute;
+  right: -12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 95px;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+}
+
+.music-player-link-text:hover .music-pointer-icon {
+  opacity: 1;
+}
+
+/* Experience Line */
+.experience-line {
+  height: 27px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 8px;
+  box-sizing: border-box;
+  width: 100%;
+  position: relative;
+}
+
+.experience-line-background {
+  width: 100%;
+  height: 26.5px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 0;
+}
+
+.experience-line-name {
+  z-index: 1;
+  color: rgba(0, 0, 0, 1);
+  font-size: 16px;
+  font-family: 'Whitney Book', sans-serif;
+  font-weight: 500;
+}
+
+.experience-line-date-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  z-index: 1;
+}
+
+.experience-line-date {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 13px;
+  font-family: 'Whitney Book', sans-serif;
+  font-weight: 500;
+}
+
+.experience-line-present-icon {
+  width: 10.6px;
+  height: 13.1px;
+}
+
+/* Main Showcase Container */
+.music-player-showcase-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-top: 210px;
+  padding-bottom: 40px;
+  background-color: rgba(231, 231, 231, 1);
+  box-sizing: border-box;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.music-player-showcase-flex {
+  flex: 1;
+}
+
+.music-player-showcase-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 120px;
+  width: 100%;
+  max-width: 520px;
+  padding-left: 20px;
+  padding-right: 20px;
+  box-sizing: border-box;
+}
+
+/* Header Styles */
+.music-player-header {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+}
+
+.header-title-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.header-line {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.header-title-main {
+  margin: 0;
+  color: rgba(0, 0, 0, 1);
+  font-size: 32px;
+  font-family: 'Whitney Book', sans-serif;
+  font-weight: 500;
+  line-height: 32px;
+}
+
+.header-title-accent {
+  margin: 0;
+  color: rgba(0, 0, 0, 1);
+  font-size: 32px;
+  font-family: 'ToneDeaf BB', sans-serif;
+  font-weight: 400;
+  line-height: 32px;
+}
+
+.header-subtitle {
+  margin: 0;
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 21px;
+  font-family: 'Whitney Book', sans-serif;
+  font-weight: 500;
+  line-height: 23.9px;
+}
+
+.header-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 60px;
+}
+
+.header-nav-link {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.2);
+  font-size: 16px;
+  font-family: 'Whitney Book', sans-serif;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.header-nav-link:hover {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+/* Guitar Container */
+.guitar-container-animate {
+  width: 100%;
+  height: 400px;
+  overflow: visible;
+  position: relative;
+}
+
+.guitar-image-container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(1.5) translateX(-60px);
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  max-width: 100%;
+  z-index: 0;
+}
+
+.guitar-image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  user-select: none;
+  pointer-events: none;
+}
+
+.rive-container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(1.5) translateX(-60px);
+  width: 100%;
+  aspect-ratio: 1800 / 267;
+  max-width: 100%;
+  z-index: 1;
+}
+
+.rive-iframe {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Sections */
+.showcase-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.section-animate {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease-out;
+}
+
+.section-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.intro-quote {
+  margin: 0;
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 21px;
+  font-family: 'Whitney Book', sans-serif;
+  font-weight: 500;
+  line-height: 23.9px;
+}
+
+.intro-description {
+  margin: 0;
+  color: rgba(0, 0, 0, 1);
+  font-size: 21px;
+  font-family: 'Whitney Book', sans-serif;
+  font-weight: 500;
+  line-height: 23.9px;
+}
+
+.divider-image {
+  width: 100%;
+}
+
+.section-number {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 21px;
+  font-family: 'Whitney Book', sans-serif;
+  font-weight: 500;
+}
+
+.experience-section-title {
+  margin: 0;
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 21px;
+  font-family: 'Whitney Book', sans-serif;
+  font-weight: 500;
+}
+
+/* Footer */
+.showcase-footer {
+  padding-top: 120px;
+  padding-bottom: 40px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-link {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.2);
+  font-size: 16px;
+  font-family: 'Whitney Book', sans-serif;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.footer-link:hover {
+  color: rgba(0, 0, 0, 0.5);
+}
+

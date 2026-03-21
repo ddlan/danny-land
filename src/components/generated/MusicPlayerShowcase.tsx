@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import './MusicPlayerShowcase.css';
 
 // Placeholder SVG data URIs to replace missing asset imports
 const musicPointer =
@@ -18,46 +19,18 @@ interface TextProps {
   style?: React.CSSProperties;
   children?: React.ReactNode;
 }
-const FancySmancyProjectTitle = ({ className, style, children }: TextProps) => (
+const FancySmancyProjectTitle = ({ className = '', style, children }: TextProps) => (
   <h2
-    className={className}
-    style={{
-      width: '100%',
-      maxWidth: '480px',
-      height: 'auto',
-      color: 'rgba(0, 0, 0, 1)',
-      boxSizing: 'content-box',
-      fontSize: '21px',
-      fontFamily: '"Whitney Book", sans-serif',
-      fontWeight: 500,
-      lineHeight: '23.9px',
-      letterSpacing: '0px',
-      textAlign: 'left',
-      margin: 0,
-      ...style,
-    }}
+    className={`fancy-smancy-project-title ${className}`}
+    style={style}
   >
     {children || 'Fancy smancy project title'}
   </h2>
 );
-const ProjectDescription = ({ className, style, children }: TextProps) => (
+const ProjectDescription = ({ className = '', style, children }: TextProps) => (
   <p
-    className={className}
-    style={{
-      width: '100%',
-      maxWidth: '480px',
-      height: 'auto',
-      color: 'rgba(0, 0, 0, 0.5)',
-      boxSizing: 'content-box',
-      fontSize: '21px',
-      fontFamily: '"Whitney Book", sans-serif',
-      fontWeight: 500,
-      lineHeight: '23.9px',
-      letterSpacing: '0px',
-      textAlign: 'left',
-      margin: 0,
-      ...style,
-    }}
+    className={`project-description ${className}`}
+    style={style}
   >
     {children ||
       'An ever-present brilliant friend and conversationalist, keeping you informed and organized, helping you be a better version of yourself.'}
@@ -78,209 +51,67 @@ const MusicPlayerButton = ({
   href?: string;
   linkLabel?: string;
 }) => {
-  const [isHovered, setIsHovered] = useState(false);
   const inner = (
     <div
       role={href ? undefined : 'button'}
       tabIndex={href ? undefined : 0}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      style={{
-        height: 'auto',
-        width: 'fit-content',
-        display: 'flex',
-        flexDirection: 'column',
-        padding: '6px',
-        backgroundColor: isHovered ? 'rgba(255, 255, 255, 0.35)' : 'rgba(255, 255, 255, 0.24)',
-        boxSizing: 'border-box',
-        borderRadius: '10px',
-        cursor: 'pointer',
-        transition: 'background-color 0.2s ease',
-        outline: 'none',
-        border: 'none',
-        overflow: 'visible',
-      }}
+      className="music-player-button-inner"
     >
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'row',
-          alignItems: 'center',
-          padding: '6px 12px',
-          gap: '8px',
-          boxSizing: 'border-box',
-          overflow: 'visible',
-        }}
-      >
+      <div className="music-player-audio-row">
         <img
           src={
-            isHovered
-              ? '/pause.svg'
-              : 'https://storage.googleapis.com/storage.magicpath.ai/user/368065211384610816/figma-assets/9e4e9fb4-b63d-4a63-a731-667d01a792ae.svg'
+            'https://storage.googleapis.com/storage.magicpath.ai/user/368065211384610816/figma-assets/9e4e9fb4-b63d-4a63-a731-667d01a792ae.svg'
           }
-          alt={isHovered ? 'Pause' : 'Play'}
-          style={{
-            width: '7.07px',
-            height: '9px',
-          }}
+          alt="Play"
+          className="music-player-audio-icon"
         />
-        <span
-          style={{
-            height: '9px',
-            color: 'rgba(0, 0, 0, 0.5)',
-            boxSizing: 'content-box',
-            fontSize: '8px',
-            fontFamily: '"Whitney Book", sans-serif',
-            fontWeight: 500,
-            lineHeight: '9.1px',
-          }}
-        >
+        <span className="music-player-audio-label">
           {audioName}
         </span>
       </div>
-      <div
-        style={{
-          width: 'fit-content',
-          display: 'flex',
-          flexDirection: 'row',
-          justifyContent: 'center',
-          alignItems: 'center',
-          padding: '6px 12px',
-          gap: '10px',
-          backgroundColor: 'rgba(255, 255, 255, 0.5)',
-          boxSizing: 'border-box',
-          borderRadius: '6px',
-          position: 'relative',
-          overflow: 'visible',
-        }}
-      >
-        <span
-          style={{
-            position: 'relative',
-            display: 'inline-block',
-            overflow: 'visible',
-          }}
-        >
-          <span
-            style={{
-              color: 'rgba(0, 0, 0, 0.2)',
-              fontSize: '16px',
-              fontFamily: '"Whitney Book", sans-serif',
-              fontWeight: 500,
-            }}
-          >
+      <div className="music-player-link-container">
+        <span className="music-player-link-text">
+          <span className="music-player-link-base">
             {linkLabel}
           </span>
-          <span
-            style={{
-              position: 'absolute',
-              left: 0,
-              top: 0,
-              width: isHovered ? '100%' : '0%',
-              overflow: 'hidden',
-              transition: 'width 0.25s ease',
-              whiteSpace: 'nowrap',
-            }}
-          >
-            <span
-              style={{
-                color: 'rgba(0, 0, 0, 1)',
-                fontSize: '16px',
-                fontFamily: '"Whitney Book", sans-serif',
-                fontWeight: 500,
-              }}
-            >
+          <span className="music-player-link-hover">
+            <span>
               {linkLabel}
             </span>
           </span>
-          <span
-            style={{
-              position: 'absolute',
-              left: 0,
-              top: 0,
-              width: isHovered ? '100%' : '0%',
-              overflow: 'visible',
-              transition: 'width 0.25s ease',
-              pointerEvents: 'none',
-            }}
-          >
+          <span className="music-pointer-hover-container">
             <img
               className="music-pointer-icon"
               src="/music-pointer.svg"
               alt=""
-              style={{
-                position: 'absolute',
-                right: '-12px',
-                top: '50%',
-                transform: 'translateY(-50%)',
-                width: '18px',
-                height: '95px',
-                opacity: isHovered ? 1 : 0,
-                transition: 'opacity 0.25s ease',
-                pointerEvents: 'none',
-              }}
             />
           </span>
         </span>
         <div
-          style={{
-            width: '114px',
-            height: '90.04px',
-            position: 'absolute',
-            left: '0px',
-            top: pointerOffset,
-            zIndex: 1,
-            pointerEvents: 'none',
-            overflow: 'visible',
-          }}
+          className="music-player-pointer-container"
+          style={{ top: pointerOffset }}
         >
           <img
+            className="music-player-pointer-icon"
             src={pointerImg}
             alt=""
-            style={{
-              width: '13px',
-              height: '90.04px',
-              opacity: isHovered ? 1 : 0,
-              position: 'absolute',
-              left: '0px',
-              top: '0px',
-              transition: 'opacity 0.2s ease',
-            }}
           />
           <img
+            className="music-player-mask-icon"
             src={maskImg}
             alt=""
-            style={{
-              width: '102px',
-              height: '18px',
-              position: 'absolute',
-              left: '12px',
-              top: '54.66px',
-            }}
           />
         </div>
       </div>
     </div>
   );
   return (
-    <div
-      style={{
-        width: 'fit-content',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        paddingTop: '28px',
-        paddingBottom: '12px',
-        boxSizing: 'border-box',
-        overflow: 'visible',
-      }}
-    >
+    <div className="music-player-button-wrapper">
       {href ? (
         <a
           href={href}
           target="_blank"
           rel="noopener noreferrer"
-          style={{ textDecoration: 'none', color: 'inherit' }}
         >
           {inner}
         </a>
@@ -299,69 +130,24 @@ const ExperienceLine = ({
   date?: string;
   isPresent?: boolean;
 }) => (
-  <div
-    style={{
-      height: '27px',
-      display: 'flex',
-      flexDirection: 'row',
-      justifyContent: 'space-between',
-      alignItems: 'center',
-      padding: '0 8px',
-      boxSizing: 'border-box',
-      width: '100%',
-      position: 'relative',
-    }}
-  >
+  <div className="experience-line">
     <img
       src="https://storage.googleapis.com/storage.magicpath.ai/user/368065211384610816/figma-assets/e2d8e1c5-eb18-4dbf-8b07-374d2f5906b2.svg"
       alt=""
-      style={{
-        width: '100%',
-        height: '26.5px',
-        position: 'absolute',
-        left: 0,
-        top: 0,
-        zIndex: 0,
-      }}
+      className="experience-line-background"
     />
-    <span
-      style={{
-        zIndex: 1,
-        color: 'rgba(0, 0, 0, 1)',
-        fontSize: '16px',
-        fontFamily: '"Whitney Book", sans-serif',
-        fontWeight: 500,
-      }}
-    >
+    <span className="experience-line-name">
       {name}
     </span>
-    <div
-      style={{
-        display: 'flex',
-        flexDirection: 'row',
-        alignItems: 'center',
-        gap: '8px',
-        zIndex: 1,
-      }}
-    >
-      <span
-        style={{
-          color: 'rgba(0, 0, 0, 0.5)',
-          fontSize: '13px',
-          fontFamily: '"Whitney Book", sans-serif',
-          fontWeight: 500,
-        }}
-      >
+    <div className="experience-line-date-group">
+      <span className="experience-line-date">
         {isPresent ? 'Present' : date}
       </span>
       {isPresent && (
         <img
           src="https://storage.googleapis.com/storage.magicpath.ai/user/368065211384610816/figma-assets/b33b088a-5e6a-4ada-ab4c-3728833039d0.svg"
           alt=""
-          style={{
-            width: '10.6px',
-            height: '13.1px',
-          }}
+          className="experience-line-present-icon"
         />
       )}
     </div>
@@ -394,144 +180,40 @@ export const MusicPlayerShowcase = () => {
     });
   };
   return (
-    <div
-      style={{
-        width: '100%',
-        minHeight: '100vh',
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'center',
-        paddingTop: '210px',
-        paddingBottom: '40px',
-        backgroundColor: 'rgba(231, 231, 231, 1)',
-        boxSizing: 'border-box',
-        overflowX: 'hidden',
-        position: 'relative',
-      }}
-    >
-      <div
-        style={{
-          flex: 1,
-        }}
-      />
+    <div className="music-player-showcase-wrapper">
+      <div className="music-player-showcase-flex" />
 
       <main
         ref={mainRef}
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          alignItems: 'center',
-          gap: '120px',
-          width: '100%',
-          maxWidth: '520px',
-          paddingLeft: '20px',
-          paddingRight: '20px',
-          boxSizing: 'border-box',
-        }}
+        className="music-player-showcase-main"
       >
-        <header
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '24px',
-            width: '100%',
-          }}
-        >
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '8px',
-            }}
-          >
-            <div
-              className="header-line header-line-1"
-              style={{
-                display: 'flex',
-                flexDirection: 'row',
-                alignItems: 'center',
-                gap: '10px',
-              }}
-            >
-              <h1
-                style={{
-                  margin: 0,
-                  color: 'rgba(0, 0, 0, 1)',
-                  fontSize: '32px',
-                  fontFamily: '"Whitney Book", sans-serif',
-                  fontWeight: 500,
-                  lineHeight: '32px',
-                }}
-              >
+        <header className="music-player-header">
+          <div className="header-title-wrapper">
+            <div className="header-line">
+              <h1 className="header-title-main">
                 Danny Lan
               </h1>
-              <h1
-                style={{
-                  margin: 0,
-                  color: 'rgba(0, 0, 0, 1)',
-                  fontSize: '32px',
-                  fontFamily: '"ToneDeaf BB", sans-serif',
-                  fontWeight: 400,
-                  lineHeight: '32px',
-                }}
-              >
+              <h1 className="header-title-accent">
                 bef
               </h1>
             </div>
-            <p
-              className="header-line header-line-2"
-              style={{
-                margin: 0,
-                color: 'rgba(0, 0, 0, 0.5)',
-                fontSize: '21px',
-                fontFamily: '"Whitney Book", sans-serif',
-                fontWeight: 500,
-                lineHeight: '23.9px',
-              }}
-            >
-              Front-End Engineer
+            <p className="header-line header-line-2 header-subtitle">
+              Frontend Engineer
             </p>
           </div>
 
-          <nav
-            className="header-line header-line-3"
-            style={{
-              display: 'flex',
-              flexDirection: 'row',
-              alignItems: 'center',
-              gap: '60px',
-            }}
-          >
+          <nav className="header-line header-line-3 header-nav">
             <a
               href="https://github.com/ddlan"
               target="_blank"
               rel="noopener noreferrer"
-              style={{
-                textDecoration: 'none',
-                color: 'rgba(0, 0, 0, 0.2)',
-                fontSize: '16px',
-                fontFamily: '"Whitney Book", sans-serif',
-                fontWeight: 500,
-                transition: 'color 0.2s',
-              }}
-              onMouseEnter={e => (e.currentTarget.style.color = 'rgba(0,0,0,0.5)')}
-              onMouseLeave={e => (e.currentTarget.style.color = 'rgba(0,0,0,0.2)')}
+              className="header-nav-link"
             >
               Github
             </a>
             <a
               href="mailto:L.danny18725@gmail.com"
-              style={{
-                textDecoration: 'none',
-                color: 'rgba(0, 0, 0, 0.2)',
-                fontSize: '16px',
-                fontFamily: '"Whitney Book", sans-serif',
-                fontWeight: 500,
-                transition: 'color 0.2s',
-              }}
-              onMouseEnter={e => (e.currentTarget.style.color = 'rgba(0,0,0,0.5)')}
-              onMouseLeave={e => (e.currentTarget.style.color = 'rgba(0,0,0,0.2)')}
+              className="header-nav-link"
             >
               Email
             </a>
@@ -540,25 +222,10 @@ export const MusicPlayerShowcase = () => {
 
         <div
           className="guitar-container-animate"
-          style={{
-            width: '100%',
-            height: '400px',
-            overflow: 'visible',
-            position: 'relative',
-          }}
           aria-label="Guitar container"
         >
           <div
-            style={{
-              position: 'absolute',
-              left: '50%',
-              top: '50%',
-              transform: 'translate(-50%, -50%) scale(1.5) translateX(-60px)',
-              width: '100%',
-              aspectRatio: '3 / 2',
-              maxWidth: '100%',
-              zIndex: 0,
-            }}
+            className="guitar-image-container"
             aria-label="Guitar image container"
           >
             <img
@@ -566,40 +233,15 @@ export const MusicPlayerShowcase = () => {
               alt=""
               draggable={false}
               onContextMenu={(e) => e.preventDefault()}
-              style={{
-                position: 'absolute',
-                left: 0,
-                top: 0,
-                width: '100%',
-                height: '100%',
-                objectFit: 'contain',
-                userSelect: 'none',
-                pointerEvents: 'none',
-              }}
+              className="guitar-image"
             />
           </div>
           <div
-            style={{
-              position: 'absolute',
-              left: '50%',
-              top: '50%',
-              transform: 'translate(-50%, -50%) scale(1.5) translateX(-60px)',
-              width: '100%',
-              aspectRatio: '1800 / 267',
-              maxWidth: '100%',
-              zIndex: 1,
-            }}
+            className="rive-container"
             aria-label="Rive container"
           >
             <iframe
-              style={{
-                position: 'absolute',
-                left: 0,
-                top: 0,
-                width: '100%',
-                height: '100%',
-                border: 'none',
-              }}
+              className="rive-iframe"
               src="https://rive.app/s/ecQhN-dvtUyCwG2Za8Qx6w/embed?runtime=rive-renderer"
               title="Rive"
               allowFullScreen
@@ -609,37 +251,13 @@ export const MusicPlayerShowcase = () => {
         </div>
 
         <section
-          className="section-animate"
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '16px',
-            width: '100%',
-          }}
+          className="section-animate showcase-section"
         >
-          <p
-            style={{
-              margin: 0,
-              color: 'rgba(0, 0, 0, 0.5)',
-              fontSize: '21px',
-              fontFamily: '"Whitney Book", sans-serif',
-              fontWeight: 500,
-              lineHeight: '23.9px',
-            }}
-          >
-            I believe in a future where computers are life-like. They will see, hear, and
-            collaborate with us the way we’re used to.
+          <p className="intro-quote">
+            "The future is already here - it's just not very evenly distributed. 
+            - William Gibson
           </p>
-          <p
-            style={{
-              margin: 0,
-              color: 'rgba(0, 0, 0, 1)',
-              fontSize: '21px',
-              fontFamily: '"Whitney Book", sans-serif',
-              fontWeight: 500,
-              lineHeight: '23.9px',
-            }}
-          >
+          <p className="intro-description">
             See how my brain works:
           </p>
         </section>
@@ -647,28 +265,13 @@ export const MusicPlayerShowcase = () => {
         <img
           src="https://storage.googleapis.com/storage.magicpath.ai/user/368065211384610816/figma-assets/7dcb634f-8765-4001-83f1-ccfa91e3bf4a.svg"
           alt="Divider"
-          style={{
-            width: '100%',
-          }}
+          className="divider-image"
         />
 
         <section
-          className="section-animate"
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '16px',
-            width: '100%',
-          }}
+          className="section-animate showcase-section"
         >
-          <span
-            style={{
-              color: 'rgba(0, 0, 0, 0.5)',
-              fontSize: '21px',
-              fontFamily: '"Whitney Book", sans-serif',
-              fontWeight: 500,
-            }}
-          >
+          <span className="section-number">
             01
           </span>
           <FancySmancyProjectTitle>Altocumulus Industries</FancySmancyProjectTitle>
@@ -687,22 +290,9 @@ export const MusicPlayerShowcase = () => {
         </section>
 
         <section
-          className="section-animate"
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '16px',
-            width: '100%',
-          }}
+          className="section-animate showcase-section"
         >
-          <span
-            style={{
-              color: 'rgba(0, 0, 0, 0.5)',
-              fontSize: '21px',
-              fontFamily: '"Whitney Book", sans-serif',
-              fontWeight: 500,
-            }}
-          >
+          <span className="section-number">
             02
           </span>
           <FancySmancyProjectTitle>InCite</FancySmancyProjectTitle>
@@ -720,22 +310,9 @@ export const MusicPlayerShowcase = () => {
         </section>
 
         <section
-          className="section-animate"
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '16px',
-            width: '100%',
-          }}
+          className="section-animate showcase-section"
         >
-          <span
-            style={{
-              color: 'rgba(0, 0, 0, 0.5)',
-              fontSize: '21px',
-              fontFamily: '"Whitney Book", sans-serif',
-              fontWeight: 500,
-            }}
-          >
+          <span className="section-number">
             03
           </span>
           <FancySmancyProjectTitle>NightBall</FancySmancyProjectTitle>
@@ -757,29 +334,11 @@ export const MusicPlayerShowcase = () => {
         <img
           src="https://storage.googleapis.com/storage.magicpath.ai/user/368065211384610816/figma-assets/fd6a7edb-0ee8-48b6-8e22-cc6b6592ab75.svg"
           alt="Divider"
-          style={{
-            width: '100%',
-          }}
+          className="divider-image"
         />
 
-        <section
-          className="section-animate"
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '16px',
-            width: '100%',
-          }}
-        >
-          <h2
-            style={{
-              margin: 0,
-              color: 'rgba(0, 0, 0, 0.5)',
-              fontSize: '21px',
-              fontFamily: '"Whitney Book", sans-serif',
-              fontWeight: 500,
-            }}
-          >
+        <section className="section-animate showcase-section">
+          <h2 className="experience-section-title">
             Experience
           </h2>
           <ExperienceLine name="Snowflake" isPresent={true} />
@@ -789,40 +348,18 @@ export const MusicPlayerShowcase = () => {
           <ExperienceLine name="Verizon Media" date="Jan 2019 - Apr 2019" />
         </section>
 
-        <footer
-          className="section-animate"
-          style={{
-            paddingTop: '120px',
-            paddingBottom: '40px',
-            width: '100%',
-            display: 'flex',
-            justifyContent: 'center',
-          }}
-        >
+        <footer className="section-animate showcase-footer">
           <a
             href="#top"
             onClick={scrollToTop}
-            style={{
-              textDecoration: 'none',
-              color: 'rgba(0, 0, 0, 0.2)',
-              fontSize: '16px',
-              fontFamily: '"Whitney Book", sans-serif',
-              fontWeight: 500,
-              transition: 'color 0.2s',
-            }}
-            onMouseEnter={e => (e.currentTarget.style.color = 'rgba(0,0,0,0.5)')}
-            onMouseLeave={e => (e.currentTarget.style.color = 'rgba(0,0,0,0.2)')}
+            className="footer-link"
           >
             Back to top
           </a>
         </footer>
       </main>
 
-      <div
-        style={{
-          flex: 1,
-        }}
-      />
+      <div className="music-player-showcase-flex" />
     </div>
   );
 };
