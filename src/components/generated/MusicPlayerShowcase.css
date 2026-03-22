@@ -509,6 +509,11 @@
   opacity: 0.8;
 }
 
+.cat-logo {
+  opacity: 0.9;
+  background-color: #fff;
+}
+
 .incite-logo {
   opacity: 0.9;
 }

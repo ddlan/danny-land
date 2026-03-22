@@ -364,7 +364,7 @@ export const MusicPlayerShowcase = () => {
             <img
               src="/cat.png"
               alt=""
-              className='logo'
+              className='logo cat-logo'
             />
           </div>
 
@@ -378,7 +378,7 @@ export const MusicPlayerShowcase = () => {
           </span>
           <FancySmancyProjectTitle>InCite</FancySmancyProjectTitle>
           <ProjectDescription>
-            Chrome extension for one-click MLA, APA, Chicago, or Harvard citations for the current page;
+            Chrome extension for one-click MLA, APA, Chicago, or Harvard citations.
             save multiple bibliographies and copy to clipboard. React + MobX, microlink metascraper.
           </ProjectDescription>
           <div className="incite-wrapper">
@@ -406,18 +406,25 @@ export const MusicPlayerShowcase = () => {
           </span>
           <FancySmancyProjectTitle>NightBall</FancySmancyProjectTitle>
           <ProjectDescription>
-            iOS/Android game that rotates a central ball to match incoming star colors. iOS built
-            with Swift, SpriteKit, and StoreKit (game modes, Game Center, in-app purchases); Android
+            Colourful iOS/Android arcade game. iOS built
+            with Swift, SpriteKit, and StoreKit. Android
             with GameMaker Studio.
           </ProjectDescription>
-          <MusicPlayerButton
-            audioName="btn-hover.mp3"
-            pointerImg={musicPointer2}
-            maskImg={mask2}
-            pointerOffset="-48.66px"
-            href="https://github.com/jeffreysfllo24/NightBall"
-            linkLabel="View on GitHub"
-          />
+          <div className='incite-wrapper'>
+            <MusicPlayerButton
+              audioName="btn-hover.mp3"
+              pointerImg={musicPointer2}
+              maskImg={mask2}
+              pointerOffset="-48.66px"
+              href="https://github.com/jeffreysfllo24/NightBall"
+              linkLabel="View on GitHub"
+            />
+            <img
+                src="/nightball.png"
+                alt=""
+                className='logo incite-logo'
+            />
+          </div>
         </section>
 
         <section
@@ -432,13 +439,20 @@ export const MusicPlayerShowcase = () => {
             Python backend with Indico.io for facial localization and recognition, plus a public web
             frontend. Worked with ML APIs for security use cases.
           </ProjectDescription>
-          <MusicPlayerButton
-            audioName="btn-hover.mp3"
-            pointerImg={musicPointer}
-            maskImg={mask}
-            href="https://devpost.com/software/altocumulus-industries"
-            linkLabel="View on Devpost"
-          />
+          <div className="incite-wrapper">
+            <MusicPlayerButton
+              audioName="btn-hover.mp3"
+              pointerImg={musicPointer}
+              maskImg={mask}
+              href="https://devpost.com/software/altocumulus-industries"
+              linkLabel="View on Devpost"
+            />
+            <img
+              src="/alto.svg"
+              alt=""
+              className='logo incite-logo'
+            />
+          </div>
         </section>
 
         <img
