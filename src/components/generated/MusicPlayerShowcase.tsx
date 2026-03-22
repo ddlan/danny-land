@@ -2,11 +2,16 @@ import React, { useState, useRef, useEffect } from 'react';
 import './MusicPlayerShowcase.css';
 import { MindMap } from '../features/MindMap';
 
+import BeamImg from '../../assets/beam.svg';
+import LeRedditImg from '../../assets/lereddit-orange.png';
+import CatImg from '../../assets/cat.png';
+import InciteImg from '../../assets/incite.png';
+import NightBallImg from '../../assets/nightball.png';
+import AltoImg from '../../assets/alto.svg';
+import MusicPointerImg from '../../assets/music-pointer.svg';
+import GuitarImg from '../../assets/guitar.png';
+
 // Placeholder SVG data URIs to replace missing asset imports
-const musicPointer =
-  "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='13' height='90' viewBox='0 0 13 90'/%3E";
-const mask =
-  "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='102' height='18' viewBox='0 0 102 18'/%3E";
 const musicPointer1 =
   "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='13' height='90' viewBox='0 0 13 90'/%3E";
 const mask1 =
@@ -83,7 +88,7 @@ const MusicPlayerButton = ({
           <span className="music-pointer-hover-container">
             <img
               className="music-pointer-icon"
-              src="/images/music-pointer.svg"
+              src={MusicPointerImg}
               alt=""
             />
           </span>
@@ -233,7 +238,7 @@ export const MusicPlayerShowcase = () => {
               Email
             </a>
             <a
-              href="/Danny_Lan_resume.pdf"
+              href="/danny-land/Danny_Lan_resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="header-nav-link"
@@ -252,7 +257,7 @@ export const MusicPlayerShowcase = () => {
             aria-label="Guitar image container"
           >
             <img
-              src="/images/guitar.png"
+              src={GuitarImg}
               alt=""
               draggable={false}
               onContextMenu={(e) => e.preventDefault()}
@@ -305,7 +310,7 @@ export const MusicPlayerShowcase = () => {
               linkLabel="Read the pitch"
             />
             <img
-              src="/images/beam.svg"
+              src={BeamImg}
               alt=""
               className='logo'
             />
@@ -332,7 +337,7 @@ export const MusicPlayerShowcase = () => {
               linkLabel="View on Github"
             />
             <img
-              src="/images/lereddit-orange.png"
+              src={LeRedditImg}
               alt=""
               className='logo lereddit-logo'
             />
@@ -359,7 +364,7 @@ export const MusicPlayerShowcase = () => {
               linkLabel="Check it out"
             />
             <img
-              src="/images/cat.png"
+              src={CatImg}
               alt=""
               className='logo cat-logo'
             />
@@ -387,7 +392,7 @@ export const MusicPlayerShowcase = () => {
               linkLabel="View on GitHub"
             />
             <img
-              src="/images/incite.png"
+              src={InciteImg}
               alt=""
               className='logo incite-logo'
             />
@@ -417,7 +422,7 @@ export const MusicPlayerShowcase = () => {
               linkLabel="View on GitHub"
             />
             <img
-                src="/images/nightball.png"
+                src={NightBallImg}
                 alt=""
                 className='logo incite-logo'
             />
@@ -445,7 +450,7 @@ export const MusicPlayerShowcase = () => {
               linkLabel="View on Devpost"
             />
             <img
-              src="/images/alto.svg"
+              src={AltoImg}
               alt=""
               className='logo incite-logo'
             />
