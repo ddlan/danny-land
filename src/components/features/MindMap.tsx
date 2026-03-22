@@ -1,6 +1,7 @@
 import ForceGraph3D from 'react-force-graph-3d';
 import { useEffect, useRef } from 'react';
-import { UnrealBloomPass } from 'https://esm.sh/three/examples/jsm/postprocessing/UnrealBloomPass.js';
+import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
+import { Vector2 } from 'three';
 
 import './MindMap.css';
 
@@ -98,10 +99,12 @@ export const MindMap = () => {
       fgRef.current.d3Force('link').distance((link: any) => 
         link.source.group !== link.target.group ? 100 : 50
       );
-      const bloomPass = new UnrealBloomPass();
-      bloomPass.strength = 0.8;
-      bloomPass.radius = 0.1;
-      bloomPass.threshold = 0.1;
+      const bloomPass = new UnrealBloomPass(
+        new Vector2(window.innerWidth, window.innerHeight),
+        0.8, // strength
+        0.1, // radius
+        0.1  // threshold
+      );
       fgRef.current.postProcessingComposer().addPass(bloomPass);
     }
    

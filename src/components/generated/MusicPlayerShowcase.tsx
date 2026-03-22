@@ -83,7 +83,7 @@ const MusicPlayerButton = ({
           <span className="music-pointer-hover-container">
             <img
               className="music-pointer-icon"
-              src="/music-pointer.svg"
+              src="/images/music-pointer.svg"
               alt=""
             />
           </span>
@@ -252,7 +252,7 @@ export const MusicPlayerShowcase = () => {
             aria-label="Guitar image container"
           >
             <img
-              src="/guitar.png"
+              src="/images/guitar.png"
               alt=""
               draggable={false}
               onContextMenu={(e) => e.preventDefault()}
@@ -298,14 +298,14 @@ export const MusicPlayerShowcase = () => {
           </ProjectDescription>
           <div className="incite-wrapper">
             <MusicPlayerButton
-              audioName="btn-hover.mp3"
+              audioName="/images/btn-hover.mp3"
               pointerImg={musicPointer1}
               maskImg={mask1}
               href="https://docs.google.com/presentation/d/1Nhxk3UBKSdHevmk1tuECUGzZJ00nyvNmB1mFkz34lhg/edit?usp=sharing"
               linkLabel="Read the pitch"
             />
             <img
-              src="/beam.svg"
+              src="/images/beam.svg"
               alt=""
               className='logo'
             />
@@ -332,7 +332,7 @@ export const MusicPlayerShowcase = () => {
               linkLabel="View on Github"
             />
             <img
-              src="/lereddit-orange.png"
+              src="/images/lereddit-orange.png"
               alt=""
               className='logo lereddit-logo'
             />
@@ -359,7 +359,7 @@ export const MusicPlayerShowcase = () => {
               linkLabel="Check it out"
             />
             <img
-              src="/cat.png"
+              src="/images/cat.png"
               alt=""
               className='logo cat-logo'
             />
@@ -387,7 +387,7 @@ export const MusicPlayerShowcase = () => {
               linkLabel="View on GitHub"
             />
             <img
-              src="/incite.png"
+              src="/images/incite.png"
               alt=""
               className='logo incite-logo'
             />
@@ -417,7 +417,7 @@ export const MusicPlayerShowcase = () => {
               linkLabel="View on GitHub"
             />
             <img
-                src="/nightball.png"
+                src="/images/nightball.png"
                 alt=""
                 className='logo incite-logo'
             />
@@ -445,7 +445,7 @@ export const MusicPlayerShowcase = () => {
               linkLabel="View on Devpost"
             />
             <img
-              src="/alto.svg"
+              src="/images/alto.svg"
               alt=""
               className='logo incite-logo'
             />
